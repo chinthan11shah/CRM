@@ -2,12 +2,14 @@
 
 {% block content %}
 
-    <a href="/leads">Go back to leads</a>
+<a href="{% url 'leads:lead-list' %}">Go back to leads</a>
     <hr />
     <h1>Create a new lead</h1>
     <form method="post">
         {% csrf_token %}
-            {{ form.as_p }}
-        <button type="submit">Submit</button>
+        {{ form.as_p }}
+        <button class="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded">
+            Submit
+        </button>
     </form>
 {% endblock content %}
